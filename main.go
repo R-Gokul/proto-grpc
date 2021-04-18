@@ -13,6 +13,10 @@ func main() {
 	gokul := &Person{
 		Name: "Gokul",
 		Age:  31,
+		SocialFollowers: &SocialFollowers{
+			Youtube: 2500,
+			Twitter: 1500,
+		},
 	}
 	data, err := proto.Marshal(gokul)
 	if err != nil {
@@ -29,5 +33,7 @@ func main() {
 
 	fmt.Println(newGokul.GetName())
 	fmt.Println(newGokul.GetAge())
+	fmt.Println(newGokul.SocialFollowers.GetYoutube())
+	fmt.Println(newGokul.SocialFollowers.GetTwitter())
 
 }
